@@ -1,2 +1,2 @@
-# JuniorCoin
+# JuniorCoin (XJR)
 An Ethereum token.
