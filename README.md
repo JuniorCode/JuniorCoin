@@ -1,0 +1,2 @@
+# JuniorCoin
+An Ethereum token.
