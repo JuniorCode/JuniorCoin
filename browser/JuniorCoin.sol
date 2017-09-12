@@ -23,8 +23,8 @@ contract JuniorCoin is IERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     
     function () payable {
-        createTokens();
-    }
+       createTokens();
+     }
 
     event Transfer(address indexed from, address indexed to, uint256 value);
 
@@ -51,7 +51,7 @@ contract JuniorCoin is IERC20 {
         return balances[_owner];
     }
     
-    function transfer(address _to, uint256 _value) returns (uint256 success) {
+    function transfer(address _to, uint256 _value) returns (bool success) {
         require(
             balances[msg.sender] >= _value
             && _value > 0
@@ -59,7 +59,6 @@ contract JuniorCoin is IERC20 {
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
         Transfer(msg.sender, _to, _value);
-        return true;
     }
     
     function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
